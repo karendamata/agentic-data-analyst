@@ -8,6 +8,8 @@ authors = [
 ]
 requires-python = ">=3.11"
 dependencies = [
+    "duckdb>=2.0.1",
+    "pre-commit>=4.7.0",
     "uv>=0.13.10",
 ]
 
@@ -17,3 +19,17 @@ agentic-data-analyst = "agentic_data_analyst:main"
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+pythonpath = ["src"]
+markers = [
+    "slow: tests that are slow or hit external services",
+]

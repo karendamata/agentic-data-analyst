@@ -1,0 +1,19 @@
+[project]
+name = "agentic-data-analyst"
+version = "0.1.0"
+description = "An LLM-powered agent that answers business questions about a public dataset, writes and runs SQL, and explains its answers in plain language."
+readme = "README.md"
+authors = [
+    { name = "KarendaMata", email = "82002008+Karendamata@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "uv>=0.13.10",
+]
+
+[project.scripts]
+agentic-data-analyst = "agentic_data_analyst:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
